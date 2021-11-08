@@ -6,5 +6,6 @@
     <Grid>
         <ComboBox x:Name="_cbState" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="50" Margin="5" SelectionChanged="OnStateSelectionChanged"/>
         <controls:Vizualizer x:Name="_cubeVisualizer" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Slider x:Name="_slider" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="20" Minimum="-180" Maximum="180" ValueChanged="OnSliderValueChanged"/>
     </Grid>
 </Window>
