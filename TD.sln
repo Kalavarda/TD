@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TowerDefense", "TowerDefense\TowerDefense.csproj", "{B34814FE-096E-4A75-A4AF-0C9FD15E4FD0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{F4208025-6CE1-4624-BC7F-66369AD2B086}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kalavarda.Primitives.WPF", "..\Primitives\Kalavarda.Primitives.WPF\Kalavarda.Primitives.WPF.csproj", "{FAD529BF-7BA0-4041-99D2-AAA40CC0B5B0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Kalavarda.Primitives", "..\Primitives\Kalavarda.Primitives\Kalavarda.Primitives.csproj", "{3C0943F3-E4FB-4563-B37C-3FC1466A548F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B34814FE-096E-4A75-A4AF-0C9FD15E4FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B34814FE-096E-4A75-A4AF-0C9FD15E4FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B34814FE-096E-4A75-A4AF-0C9FD15E4FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B34814FE-096E-4A75-A4AF-0C9FD15E4FD0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FAD529BF-7BA0-4041-99D2-AAA40CC0B5B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD529BF-7BA0-4041-99D2-AAA40CC0B5B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD529BF-7BA0-4041-99D2-AAA40CC0B5B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD529BF-7BA0-4041-99D2-AAA40CC0B5B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C0943F3-E4FB-4563-B37C-3FC1466A548F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C0943F3-E4FB-4563-B37C-3FC1466A548F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C0943F3-E4FB-4563-B37C-3FC1466A548F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C0943F3-E4FB-4563-B37C-3FC1466A548F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FAD529BF-7BA0-4041-99D2-AAA40CC0B5B0} = {F4208025-6CE1-4624-BC7F-66369AD2B086}
+		{3C0943F3-E4FB-4563-B37C-3FC1466A548F} = {F4208025-6CE1-4624-BC7F-66369AD2B086}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A631F9E7-8112-43BA-AE60-8F682185A44C}
+	EndGlobalSection
+EndGlobal

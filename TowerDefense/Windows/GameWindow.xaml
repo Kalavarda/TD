@@ -1,0 +1,10 @@
+﻿<Window x:Class="TowerDefense.Windows.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:Kalavarda.Primitives.WPF.Controls;assembly=Kalavarda.Primitives.WPF"
+        Title="GameWindow" Height="450" Width="800">
+    <Grid>
+        <ComboBox x:Name="_cbState" HorizontalAlignment="Center" VerticalAlignment="Top" MinWidth="50" Margin="5" SelectionChanged="OnStateSelectionChanged"/>
+        <controls:Vizualizer x:Name="_cubeVisualizer" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</Window>
