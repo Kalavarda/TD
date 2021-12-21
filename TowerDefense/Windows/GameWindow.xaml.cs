@@ -9,20 +9,21 @@ namespace TowerDefense.Windows
 {
     public partial class GameWindow
     {
-        private readonly VisualData _visualData;
+        private readonly VisualObject _visualObject;
 
         public GameWindow()
         {
             InitializeComponent();
 
-            _visualData = CreateTeapot();
+            //_visualData = CreateTeapot();
+            _visualObject = CreateCube();
 
-            _cbState.ItemsSource = _visualData.States.Select(st => st.Name).OrderBy(n => n);
+            _cbState.ItemsSource = _visualObject.States.Select(st => st.Name).OrderBy(n => n);
 
             Loaded += GameWindow_Loaded;
         }
 
-        private static VisualData CreateCube()
+        private static VisualObject CreateCube()
         {
             var idle = new View
             {
@@ -51,25 +52,28 @@ namespace TowerDefense.Windows
                 },
                 DurationSec = 1f
             };
-            return new VisualData
+            return new VisualObject
             {
                 States = new[]
                 {
                     new State
                     {
                         Name = "Idle",
-                        Views = new[] {idle}
+                        Views = new[] { idle },
+                        Sound = new StateSound { RawData = GetRawData(@"C:\Work\Code\Kalavarda\Room\Room\Resources", "Blow_01.mp3") }
                     },
                     new State
                     {
                         Name = "Active",
-                        Views = new[] {rotating}
+                        Views = new[] { rotating },
+                        Sound = new StateSound { RawData = GetRawData(@"C:\Work\Code\Kalavarda\Room\Room\Resources", "Fireball_01.mp3") },
+                        Looping = false
                     }
                 }
             };
         }
 
-        private static VisualData CreateTeapot()
+        private static VisualObject CreateTeapot()
         {
             var views = new View[16];
             for (var i = 0; i < views.Length; i++)
@@ -88,7 +92,7 @@ namespace TowerDefense.Windows
                 };
             }
 
-            return new VisualData
+            return new VisualObject
             {
                 States = new[]
                 {
@@ -103,12 +107,19 @@ namespace TowerDefense.Windows
 
         private void GameWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            _cubeVisualizer.VisualData = _visualData;
+            _cubeVisualizer1.VisualObject = _visualObject;
+            _cubeVisualizer2.VisualObject = _visualObject;
+            _cubeVisualizer3.VisualObject = _visualObject;
         }
 
         private static byte[] GetRawData(string fileName)
         {
             var path = fileName.StartsWith("Teapot") ? @"C:\_\11\08\Teapot" : @"C:\_\11\08\CubeAnimation";
+            return GetRawData(path, fileName);
+        }
+
+        private static byte[] GetRawData(string path, string fileName)
+        {
             using var file = new FileStream(Path.Combine(path, fileName), FileMode.Open, FileAccess.Read, FileShare.Read);
             var data = new byte[file.Length];
             file.Read(data);
@@ -121,13 +132,13 @@ namespace TowerDefense.Windows
                 return;
 
             var name = (string)_cbState.SelectedItem;
-            var state = _visualData.States.First(st => st.Name == name);
-            _visualData.State = state;
+            var state = _visualObject.States.First(st => st.Name == name);
+            _visualObject.CurrentState = state;
         }
 
         private void OnSliderValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
-            _visualData.Angle = (int)_slider.Value;
+            _visualObject.CurrentAngle = (int)_slider.Value;
         }
     }
 }
